@@ -1,0 +1,4 @@
+*/.DS_Store
+*.log
+config/pork_config.yml
+config/database.yml
