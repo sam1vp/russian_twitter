@@ -25,11 +25,14 @@ def lang_process_tweet(tweet)
   else
     begin
       lang_data = lang_detect(tweet.text)
-      language = Language.new(:iso_lang_code => lang_data["language"], :tweet_id => tweet.id, :confidence => lang_data["confidence"], :is_reliable? => lang_data["isReliable"])
+      language = Language.new(:iso_lang_code => lang_data["language"], :tweet_id => tweet.id, :confidence => lang_data["confidence"], :is_reliable => lang_data["isReliable"])
       language.save
       return tweet.language
     rescue
       puts "error processing tweet. moving on. Google data: #{lang_data.inspect}"
+      if not lang_data
+        sleep 600
+      end
     end
   end
 end
