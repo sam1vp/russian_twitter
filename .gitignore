@@ -2,4 +2,4 @@
 *.log
 config/pork_config.yml
 config/database.yml
-db/schema.rb`
+db/schema.rb
