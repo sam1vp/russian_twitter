@@ -43,7 +43,7 @@ def lang_process_tweet(tweet)
         sleep 600
       end
     end
-    pause_time = (API_DAILY_RATE/24.0/60.0/60.0 - (Time.now - start_time))
+    pause_time = (24.0*60.0*60.0/API_DAILY_RATE - (Time.now - start_time))
     sleep pause_time if pause_time > 0
     return tweet.language
   end
