@@ -1,4 +1,4 @@
-terms = ['#russia']
+terms = ['#russia', '#ru', '#spb', '#rutwitter', '#moscow', '#msk', '#rostov', '#rnd', '#piter']
 
 terms.each do |t|
   $SAVER.rules = {'tags' => {'tag' => t}}
