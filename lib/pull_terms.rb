@@ -1,5 +1,5 @@
-terms = ['#russia'] 
-new_terms = ['#ru', '#spb', '#rutwitter', '#moscow', '#msk', '#rostov', '#rnd', '#piter']
+terms = ['#russia','#ru', '#spb', '#rutwitter', '#moscow', '#msk', '#rostov', '#rnd', '#piter'] 
+new_terms = []
 
 terms.each do |t|
   $SAVER.rules = {'tags' => {'tag' => t}}
@@ -10,6 +10,6 @@ end
 
 new_terms.each do |t|
   $SAVER.rules = {'tags' => {'tag' => t}}
-  Pork::Search.new(t)
+  Pork::Search.new(t).historical_pull
   puts "completed #{t} pull"
 end

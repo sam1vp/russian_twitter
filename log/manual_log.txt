@@ -1,0 +1,15 @@
+Research Log and General Notes: 
+
+First grabbed ~17,000 tweets mentioning #russia. Due to timing, many were about the olympics. 
+
+3-9 Parsed out other common hashtags found in those 17,000 tweets, began pulling for all russia-related hashtags with more than 200 mentions in the set: '#ru', '#spb', '#rutwitter', '#moscow', '#msk', '#rostov', '#rnd', '#piter'
+
+3-9 I'm now running lang_detect on all hashtagged tweets. At first, was using google lang detect, but ran up against API limits. Now using alchemy. ~1000 tweets remain google lang detected, you can tell because the're the tweets that have a confidence value in the associated language row. 
+
+=
+
+
+
+
+
+
