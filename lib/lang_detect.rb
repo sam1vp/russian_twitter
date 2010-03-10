@@ -27,6 +27,7 @@ def lang_process_tweet(tweet)
   if tweet.language
     return tweet.language
   else
+    start_time = Time.now
     begin
       lang_data = lang_detect(tweet.text)
       if API == 'google'
@@ -42,6 +43,8 @@ def lang_process_tweet(tweet)
         sleep 600
       end
     end
+    pause_time = (API_DAILY_RATE/24.0/60.0/60.0 - (Time.now - start_time))
+    sleep pause_time if pause_time > 0
     return tweet.language
   end
 end
@@ -55,10 +58,7 @@ def lang_all_tweets
        break
      end
      tweet_set.each do |tweet|
-       start_time = Time.now
        lang_process_tweet(tweet)
-       pause_time = (API_DAILY_RATE/24.0/60.0/60.0 - (Time.now - start_time))
-       sleep pause_time if pause_time > 0
        count += 1
      end
      i += 1000
