@@ -21,8 +21,8 @@ end
 def pull_user(user, via)
   user = Pork::TwitterUser.new(:twitter_screen_name => user)
   user.pull_account_info
-  db_id = user.db_object.id
-  AccountMetadata.create(:acquired_via => via, :twitter_account_id => db_id, :account_info_updated => Time.now)
+  db_id = user.db_object.id if user.db_object
+  AccountMetadata.create(:acquired_via => via, :twitter_account_id => db_id, :account_info_updated => Time.now) if user.db_object
 end
 
 i = 1000
