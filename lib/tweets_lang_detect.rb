@@ -2,9 +2,10 @@ require 'lang_detect.rb'
 
 i = 1000
 count = 0
+total = Tweet.all.size
 loop do
  tweet_set = Tweet.all(:conditions => "id >= #{i - 1000} and id < #{i}")
- if tweet_set.size == 0
+ if count == total
    break
  end
  tweet_set.each do |tweet|

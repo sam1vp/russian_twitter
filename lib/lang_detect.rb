@@ -7,7 +7,7 @@ DETECT_API_PARAMS = {'outputMode' => "json",'apikey' => YAML::load(File.open("#{
 DETECT_URL = 'http://access.alchemyapi.com/calls/text/TextGetLanguage?'  #'http://ajax.googleapis.com/ajax/services/language/detect?'
 TEXT_PARAM = 'text' # 'q'
 API = 'alchemy' #'google'
-API_DAILY_RATE = 30_000
+API_DAILY_RATE =   130_000
 
 def lang_detect(text)
     detect_params = DETECT_API_PARAMS.dup
@@ -36,6 +36,7 @@ def lang_process_tweet(tweet)
         iso_code = lang_data["iso-639-1"]? lang_data["iso-639-1"] : lang_data["language"]
         language = Language.new(:iso_lang_code => iso_code, :tweet_id => tweet.id, :is_reliable => true)
       end
+      puts language.iso_lang_code
       language.save
     rescue
       puts "error processing tweet. moving on. Data: #{lang_data.inspect}"

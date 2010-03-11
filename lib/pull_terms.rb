@@ -10,8 +10,7 @@ Term.all.each do |t|
   else
     Pork::Search.new(t.term).historical_pull
   end
-  t.latest_status_id = Tweet.tagged_with(t.term).map {|tweet| tweet.status_id}.max
-  t.save
+  Term.update(t.id, :latest_status_id => Tweet.tagged_with(t.term).map {|tweet| tweet.status_id}.max)
   $PORK_LOG.write("completed #{t.term} pull")
 end
 $PORK_LOG.write("***************Ended pulls at #{Time.now}**********************")
