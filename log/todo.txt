@@ -1,0 +1,13 @@
+- Fix rate limiting problem by finding a way around Auth
+- fix user tweet pulling on pork_sandwich
+
+
+- finish pull User tweets script
+- Determine if user tweets in Russian script
+- Pull friends and followers script
+
+
+- Determine if user is in Russia script
+
+
+- Pull most popular twitterers
