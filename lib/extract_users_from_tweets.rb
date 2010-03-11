@@ -7,7 +7,9 @@ def extract_user(tweet)
   name = tweet.from_user
   via = tweet.tags.first.name
   if !TwitterAccount.find_by_screen_name(name) and (tweet.language.iso_lang_code == 'ru')
-   Username.create(:username => name, :via => via) 
+    if !Username.find_by_username(name)
+      Username.create(:username => name, :via => via) 
+    end
   end
 end
 
