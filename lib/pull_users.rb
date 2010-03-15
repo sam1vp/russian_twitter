@@ -1,6 +1,7 @@
 require 'ruby-debug'
 Object.send :undef_method, :id
 
+$PORK_LOG = Pork::Log.new(STDOUT)
 
 def pull_user(user, via)
   @user = Pork::TwitterUser.new(:twitter_screen_name => user)
