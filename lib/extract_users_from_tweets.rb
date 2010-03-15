@@ -17,14 +17,13 @@ end
 i = 1000
 count = 0
 total = Tweet.all.size
-$users_to_pull = {}
 loop do
  tweet_set = Tweet.all(:conditions => "id >= #{i - 1000} and id < #{i}")
  if count == total
    break
  end
  tweet_set.each do |tweet|
-   if !tweet.tags.empty? and tweet.language
+   if !!tweet.tags and tweet.language
      extract_user(tweet)
    end
    count += 1
