@@ -1,4 +1,3 @@
-- Fix rate limiting problem by finding a way around Auth
 - fix user tweet pulling on pork_sandwich
 
 
@@ -11,3 +10,10 @@
 
 
 - Pull most popular twitterers
+
+
+What are they talking about? How? Who's talking about it? Who's the most influential? 
+
+Word Cloud, Hashtags
+Links
+Sentiment Analysis
