@@ -7,7 +7,7 @@ DETECT_API_PARAMS = {'outputMode' => "json",'apikey' => YAML::load(File.open("#{
 DETECT_URL = 'http://access.alchemyapi.com/calls/text/TextGetLanguage?'  #'http://ajax.googleapis.com/ajax/services/language/detect?'
 TEXT_PARAM = 'text' # 'q'
 API = 'alchemy' #'google'
-API_DAILY_RATE =   130_000
+API_DAILY_RATE = 75_000
 
 def lang_detect(text)
     detect_params = DETECT_API_PARAMS.dup
