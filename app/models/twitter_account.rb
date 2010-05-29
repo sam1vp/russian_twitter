@@ -1,7 +1,7 @@
 class TwitterAccount < ActiveRecord::Base
   acts_as_taggable_on :tags
   has_many :tweets
-  has_one :account_metadata
+  has_one :account_metadata, :dependent => :destroy
   has_and_belongs_to_many :trends
   
   
